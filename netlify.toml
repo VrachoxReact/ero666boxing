@@ -5,12 +5,6 @@
 [build.environment]
   NODE_VERSION = "20"
   NPM_FLAGS = "--no-audit --production"
-  
-# Use Netlify's official cache plugin instead of a custom one
-[[plugins]]
-  package = "netlify-plugin-cache"
-  [plugins.inputs]
-    paths = ["node_modules/.cache", ".eslintcache", "build-cache"]
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
