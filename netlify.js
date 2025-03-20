@@ -28,5 +28,6 @@ try {
   process.exit(0);
 } catch (error) {
   console.error('❌ Build failed:', error.message);
+  console.error('Stack trace:', error.stack);
   process.exit(1);
 } 
