@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn boxing from an eight-time Croatian champion with comprehensive online courses designed for all skill levels." />
+    <meta name="theme-color" content="#1f2937" />
+    <title>Erik Pijetraj Boxing Academy</title>
+    
+    <!-- DNS Prefetch for Critical Resources -->
+    <link rel="dns-prefetch" href="https://placehold.co" />
+    
+    <!-- Preconnect to critical resources -->
+    <link rel="preconnect" href="https://placehold.co" crossorigin />
+    
+    <!-- Critical CSS -->
+    <style>
+      /* Inline critical CSS to eliminate render-blocking */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        background-color: #fff;
+        color: #111827;
+      }
+      
+      #app {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #111827;
+          color: #f3f4f6;
+        }
+      }
+      
+      /* Loading state */
+      .initial-loader {
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .initial-loader-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        border-top-color: #4f46e5;
+        animation: spin 1s ease-in-out infinite;
+      }
+      
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        .initial-loader-spinner {
+          border-color: rgba(255, 255, 255, 0.1);
+          border-top-color: #4f46e5;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Initial loading indicator that will be replaced by Vue -->
+      <div class="initial-loader">
+        <div class="initial-loader-spinner"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    
+    <!-- Preload key page resources based on most likely navigation path -->
+    <link rel="prefetch" href="/src/views/HomeView.vue" as="script" />
+    <link rel="prefetch" href="/src/views/CoursesView.vue" as="script" />
+  </body>
+</html>
