@@ -1,0 +1,16 @@
+{
+  "build": {
+    "environment": {
+      "NODE_VERSION": "18.18.0"
+    }
+  },
+  "dev": {
+    "framework": "vite",
+    "targetPort": 5173,
+    "port": 8888
+  },
+  "functions": {
+    "directory": "netlify/functions",
+    "node_bundler": "esbuild"
+  }
+} 
