@@ -16,9 +16,19 @@ try {
     process.exit(1);
   }
 
-  // Run clean NPM install specifically with no external tools
+  // Run dependency installation with better error handling
   console.log('📦 Installing dependencies with NPM...');
-  execSync('npm ci --no-optional --prefer-offline --no-audit', { stdio: 'inherit' });
+  try {
+    // Try npm install instead of npm ci for better compatibility
+    execSync('npm install --no-optional', { stdio: 'inherit' });
+    console.log('✅ Dependencies installed successfully');
+  } catch (installError) {
+    console.error('❌ Dependency installation failed:', installError.message);
+    console.error('Stack trace:', installError.stack);
+    // Try with fallback approach
+    console.log('⚠️ Trying alternative installation approach...');
+    execSync('npm install --production=false --no-optional', { stdio: 'inherit' });
+  }
   
   // Skip TypeScript checking for production builds on Netlify
   console.log('📦 Building application with Vite (TypeScript checking disabled)');
