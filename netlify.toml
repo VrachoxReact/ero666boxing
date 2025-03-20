@@ -4,7 +4,15 @@
   
 [build.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--no-audit"
+  NPM_FLAGS = "--no-audit --no-optional"
+  # Disable Go detection/installation
+  GO_IMPORT_PATH = ""
+  GO_VERSION = ""
+  # Ensure clean install
+  CI = "true"
+  # Disable other package managers
+  NETLIFY_USE_YARN = "false"
+  NETLIFY_USE_PNPM = "false"
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
