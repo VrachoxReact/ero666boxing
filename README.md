@@ -54,7 +54,7 @@ src/
 
 ### Prerequisites
 
-- Node.js 16.x or later
+- Node.js 20.x or later (required by Vite 6.x and other dependencies)
 - npm or yarn
 
 ### Installation
@@ -98,6 +98,7 @@ This project is configured for easy deployment to Netlify:
    - Netlify will automatically detect build settings from netlify.toml
 
 3. Configuration is already set with:
+   - Node.js 20 environment for compatibility with Vite 6.x
    - SPA routing support via redirects
    - Cache optimization
    - Security headers
