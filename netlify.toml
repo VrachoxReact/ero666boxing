@@ -6,9 +6,11 @@
   NODE_VERSION = "16"
   NPM_FLAGS = "--no-audit --production"
   
-# Use the Netlify cache plugin to speed up builds
+# Use Netlify's official cache plugin instead of a custom one
 [[plugins]]
-  package = "/netlify/netlify-plugin-cache"
+  package = "netlify-plugin-cache"
+  [plugins.inputs]
+    paths = ["node_modules/.cache", ".eslintcache", "build-cache"]
 
 # Redirect all routes to index.html for SPA routing
 [[redirects]]
