@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Learn boxing from an eight-time Croatian champion with comprehensive online courses designed for all skill levels." />
     <meta name="theme-color" content="#1f2937" />
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="Erik Pijetraj Boxing Academy" />
+    <meta property="og:description" content="Learn boxing from an eight-time Croatian champion with comprehensive online courses designed for all skill levels." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://erik-boxing-academy.netlify.app/" />
+    <meta property="og:image" content="/public/images/erik-boxing.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- Netlify Identity - Remove if not using Netlify Identity -->
+    <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+    
     <title>Erik Pijetraj Boxing Academy</title>
     
     <!-- DNS Prefetch for Critical Resources -->
@@ -80,5 +92,18 @@
     <!-- Preload key page resources based on most likely navigation path -->
     <link rel="prefetch" href="/src/views/HomeView.vue" as="script" />
     <link rel="prefetch" href="/src/views/CoursesView.vue" as="script" />
+    
+    <!-- Netlify deployment notification script - useful if using Netlify CMS -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
