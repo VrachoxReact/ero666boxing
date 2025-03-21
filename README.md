@@ -80,9 +80,9 @@ src/
    npm run build
    ```
 
-## Deployment to Netlify
+## Deployment to Vercel
 
-This project is configured for easy deployment to Netlify:
+This project is configured for easy deployment to Vercel:
 
 1. Push your code to GitHub
    ```bash
@@ -91,23 +91,24 @@ This project is configured for easy deployment to Netlify:
    git push
    ```
 
-2. Connect to Netlify:
-   - Go to [Netlify.com](https://netlify.com) and sign up/log in
-   - Click "Add new site" → "Import an existing project"
+2. Connect to Vercel:
+   - Go to [Vercel.com](https://vercel.com) and sign up/log in
+   - Click "Add New" → "Project"
    - Connect to your GitHub repository
-   - Netlify will automatically detect build settings from netlify.toml
+   - Vercel will automatically detect it's a Vue/Vite project
 
-3. Configuration is already set with:
-   - Node.js 20 environment for compatibility with Vite 6.x
-   - SPA routing support via redirects
-   - Cache optimization
-   - Security headers
-   - Compression settings
+3. Configuration:
+   - Vercel will automatically detect the correct build settings
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+   - Install Command: `npm install`
+   - Development Command: `npm run dev`
 
 4. After deployment, you can:
    - Configure a custom domain
    - Enable HTTPS
-   - Set up form submissions if needed
+   - Set up environment variables if needed
+   - Configure project settings through the Vercel dashboard
 
 ## Development
 

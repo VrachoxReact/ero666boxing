@@ -1,20 +1,21 @@
 <script setup lang="ts">
-import { ref, onMounted, computed, reactive } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCourseStore } from '../stores/courseStore'
 import { useCartStore } from '../stores/cartStore'
 import { StarIcon, CheckCircleIcon } from '@heroicons/vue/24/solid'
 import { ArrowRightIcon, ArrowLongRightIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
-import { useIntersectionObserver } from '@vueuse/core'
 
 const router = useRouter()
 const courseStore = useCourseStore()
 const cartStore = useCartStore()
 
-const featuredCourses = computed(() => courseStore.getFeaturedCourses.slice(0, 6))
+const featuredCourses = computed(() => {
+  // Filter courses by featured property and take the first 6
+  return courseStore.courses.filter(course => course.featured).slice(0, 6)
+})
 const isLoading = ref(true)
 const activeTestimonial = ref(0)
-const animationElements = reactive(new Map())
 
 // Setup intersection observer for animations
 const setupAnimations = () => {

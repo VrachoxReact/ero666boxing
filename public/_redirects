@@ -1,3 +1,0 @@
-# Netlify redirects file
-# Fallback for SPA routing - all routes not matching a static file route to index.html
-/*    /index.html   200 
